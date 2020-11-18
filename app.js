@@ -92,13 +92,14 @@ function generateQuestionPage(){
   let html = '<div class= "question-page">';
   html +=      `<h2>Question ${store.questionNumber + 1}</h2>
                 <p>${question.question}</p>
+                <form>
                 <ul>`;
   for(let i = 0; i < 4; i++){
     html +=       `<li><input type="radio" required="required" id="Choice ${i+1}" name="Answer" value="${question.answers[i]}"`;
     html +=       `<label>${question.answers[i]}</label><br></li>`;
   }
   html +=      '</ul>';
-  html+= '<button type="submit">Check</button>';
+  html+= '<input type="submit" value="Check"></form>';
   store.goToCheck = true;
   return html;
 
@@ -178,7 +179,7 @@ function handleStartClick(){
 }
 
 function handleCheckClick(){
-  $('.question-page').on('click', 'button[type="submit"]', e =>{
+  $('.question-page').on('submit', e =>{
     console.log($('input:checked').val());
     if($('input:checked').val() === store.questions[store.questionNumber].correctAnswer){
       store.gotRight = true;
