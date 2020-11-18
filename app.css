@@ -4,6 +4,7 @@
  
 }
 body{
+  width: 100vw;
   background-color: #000000;
 }
 header{
@@ -34,7 +35,7 @@ main div.box{
   display: flex;
   flex-direction: column;
   flex: 1;
-  font-size: 20px;
+  font-size: 15px;
   justify-content: center;
   max-width: 500px;
   border: white solid 4px;
@@ -86,8 +87,12 @@ footer{
   background-position: 50% -30px;
 }
 
-@media all and (min-width: 800px){
+@media all and (min-width: 600px){
   header{
     padding-top: 18vh;
+  }
+
+  main div{
+    font-size: 20px;
   }
 }
