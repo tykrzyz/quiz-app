@@ -30,24 +30,31 @@ main{
   
 }
 
-main div{
+main div.box{
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-size: 20px;
   justify-content: center;
   max-width: 500px;
-  border: black solid 2px;
+  border: white solid 4px;
   border-radius: 10px;
   padding: 20px;
-  background-color: #2640b6;
-  color: #e4f1fe;
+  background-color:#e01a1b;
+  color: white;
   height: 80%;
+  transform: skew(-20deg);
   margin: 50px;
   margin-top: 20px;
   margin-bottom: 0;
 }
 
-h1, p, button{
+main div{
+  transform: skew(20deg);
+  padding-left: 40px;
+}
+
+h1, p{
   flex: 0.5;
 }
 
@@ -65,8 +72,8 @@ ul{
 }
 
 button{
-  max-width: 60px;
-  margin-left: 40px;
+  max-width: 70px;
+  margin-left: 0px;
   max-height: 30px;
 }
 

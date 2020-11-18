@@ -81,17 +81,17 @@ const store = {
 /********** TEMPLATE GENERATION FUNCTIONS **********/
 
 function generateMainPage(){
-  return `<div class='main-page'>
-            <h2>How well do you know Audi?</h2>
+  return `<div class='main-page box'>
+            <div><h2>How well do you know Audi?</h2>
             <h2>Click start to find out!</h2>
-            <button type='button'>Start!</button>
+            <button type='button'>Start!</button></div>
           </div>`;
 }
 
 function generateQuestionPage(){
   let question = store.questions[store.questionNumber];
-  let html = '<div class= "question-page">';
-  html +=      `<h2>Question ${store.questionNumber + 1}</h2>
+  let html = '<div class= "question-page box">';
+  html +=      `<div><h2>Question ${store.questionNumber + 1}</h2>
                 <p>${question.question}</p>
                 <form>
                 <ul>`;
@@ -100,7 +100,8 @@ function generateQuestionPage(){
     html +=       `<label>${question.answers[i]}</label><br></li>`;
   }
   html +=      '</ul>';
-  html+= '<input type="submit" value="Check"></form>';
+  html += '<input type="submit" value="Check"></form>';
+  html += '</div></div>';
   store.goToCheck = true;
   return html;
 
@@ -108,36 +109,36 @@ function generateQuestionPage(){
 
 function generateWrongAnswerPage(){
   store.goToCheck = false;
-  return `<div class="result-page">
-            <h2>Wrong</h2>
+  return `<div class="result-page box">
+            <div><h2>Wrong</h2>
             <p>The correct answer was:</p>
             <p>${store.questions[store.questionNumber].correctAnswer}</p>
             <p><b>CORRECT:</b> ${store.score}</p>
             <p><b>INCORRECT:</b> ${store.questionNumber-store.score+1}</p>
             <button type="button">Next</button>
-          </div>`;
+          </div></div>`;
 }
 
 function generateCorrectAnswerPage(){
   store.goToCheck = false;
   store.score++;
-  return `<div class="result-page">
-            <h2>CORRECT!</h2>
+  return `<div class="result-page box">
+            <div><h2>CORRECT!</h2>
             <p>The correct answer was:</p>
             <p>${store.questions[store.questionNumber].correctAnswer}</p>
             <p><b>CORRECT:</b> ${store.score}</p>
             <p><b>INCORRECT:</b> ${store.questionNumber-store.score + 1}</p>
             <button type="button">Next</button>
-          </div>`;
+          </div></div>`;
 }
 
 function generateScorePage(){
-  return `<div class="final-results-page">
-            <h2>Final Results</h2>
+  return `<div class="final-results-page box">
+            <div><h2>Final Results</h2>
             <p><b>CORRECT:</b> ${store.score}</p>
             <p><b>INCORRECT:</b> ${store.questionNumber-store.score}</p>
             <button type="button">Retry?</button>
-          </div>`;
+          </div></div>`;
 }
 
 /********** RENDER FUNCTION(S) **********/
