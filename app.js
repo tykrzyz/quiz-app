@@ -6,54 +6,54 @@ const store = {
   // 5 or more questions are required
   questions: [
     {
-      question: 'What color is broccoli?',
+      question: 'What is Audi\'s all-wheel drive system called?',
       answers: [
-        'red',
-        'orange',
-        'pink',
-        'green'
+        'Audi 4x4',
+        'Allroad',
+        'Audi Quattro',
+        'Audi Allwheel'
       ],
-      correctAnswer: 'green'
+      correctAnswer: 'Audi Quattro'
     },
     {
-      question: 'What is the current year?',
+      question: 'When was the original Audi Quattro (First AWD car) introduced?',
       answers: [
         '1970',
-        '2015',
-        '2020',
-        '2005'
+        '1980',
+        '1990',
+        '2000'
       ],
-      correctAnswer: '2020'
+      correctAnswer: '1980'
     },
     {
-      question: 'What is the answer to life, the universe, and everything?',
+      question: 'The Name of Audi\'s street legal supercar is:',
       answers: [
-        '42',
-        'Nothing',
-        'What?',
-        'Brownies'
+        'R8',
+        'RS3',
+        'A4',
+        'Q5'
       ],
-      correctAnswer: '42'
+      correctAnswer: 'R8'
     },
     {
-      question: 'Question 4',
+      question: 'Which company owns Audi?',
       answers: [
-        '1970',
-        '2015',
-        '2019',
-        '2005'
+        'BMW',
+        'Toyota',
+        'Volkswagen',
+        'Lexus'
       ],
-      correctAnswer: '2019'
+      correctAnswer: 'Volkswagen'
     },
     {
-      question: 'Question 5',
+      question: 'What does the Audi Logo represent?',
       answers: [
-        '1970',
-        '2015',
-        '2019',
-        '2005'
+        'The racing history behind Audi',
+        'Audi\'s former history with the Olympics',
+        'The four pillars of Audi\'s mission',
+        'The four companies that started Audi'
       ],
-      correctAnswer: '2019'
+      correctAnswer: 'The four companies that started Audi'
     }
   ],
   quizStarted: false,
@@ -82,7 +82,8 @@ const store = {
 
 function generateMainPage(){
   return `<div class='main-page'>
-            <p>Answer my questions!</p>
+            <h2>How well do you know Audi?</h2>
+            <h2>Click start to find out!</h2>
             <button type='button'>Start!</button>
           </div>`;
 }
@@ -111,7 +112,6 @@ function generateWrongAnswerPage(){
             <h2>Wrong</h2>
             <p>The correct answer was:</p>
             <p>${store.questions[store.questionNumber].correctAnswer}</p>
-            <br>
             <p><b>CORRECT:</b> ${store.score}</p>
             <p><b>INCORRECT:</b> ${store.questionNumber-store.score+1}</p>
             <button type="button">Next</button>
@@ -125,7 +125,6 @@ function generateCorrectAnswerPage(){
             <h2>CORRECT!</h2>
             <p>The correct answer was:</p>
             <p>${store.questions[store.questionNumber].correctAnswer}</p>
-            <br>
             <p><b>CORRECT:</b> ${store.score}</p>
             <p><b>INCORRECT:</b> ${store.questionNumber-store.score + 1}</p>
             <button type="button">Next</button>
