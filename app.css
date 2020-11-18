@@ -4,7 +4,7 @@
  
 }
 body{
-  width: 100vw;
+
   background-color: #000000;
 }
 header{
@@ -21,7 +21,7 @@ h1{
 
 main{
   background-image: url("images/Audi-R8.png");
-  background-size: 700px;
+  background-size: 100vw;
   background-repeat: no-repeat;
   background-position: 50%, 0%;
   display: flex;
@@ -94,5 +94,9 @@ footer{
   main div{
     font-size: 20px;
     max-width: 500px;
+  }
+
+  main{
+    background-size: 700px;
   }
 }
